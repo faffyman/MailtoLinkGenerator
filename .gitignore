@@ -1,4 +1,8 @@
 .DS_Store
 .idea
-ß#public/components/vendor
-public/.sass-cache
+#public/components/vendor
+public/
+bower.json
+.bowerrc
+config.rb
+README.md
