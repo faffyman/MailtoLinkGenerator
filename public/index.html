@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Link Generator</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="components/vendor/font-awesome/css/font-awesome.min.css" />
+    <script src="components/vendor/modernizr/bin/modernizr"></script>
+    <script src="components/vendor/angular/angular.min.js"></script>
+</head>
+<body ng-app="MailtoLinkApp"  ng-controller="MailtoLinkCtrl">
+
+
+<header>
+
+    <div class="row">
+    <div class="large-12 columns">
+        <h1>Email Link Generator</h1>
+        <p>Want to create a link, which when clicked opens the email client with a pre-filled subject and body<br />
+        Use this form and hit generate</p>
+    </div>
+    </div>
+
+</header>
+
+<div id="mainbody">
+
+<section id="inputform">
+    <form name="mailtoForm">
+        <div class="row">
+                <div class="small-12 medium-6 columns">
+                    <label for="mail_to">Send To</label>
+                    <input type="email" placeholder="recipient@email.com" name="mail_to" id="mail_to"  ng-model="mailto.to" />
+                    <span class="error" ng-show="mailtoForm.mail_to.$error.email">Not valid email!</span>
+                </div>
+        </div>
+        <div class="row">
+            <div class="small-12 medium-6 columns">
+                    <label for="mail_subject">Email Subject</label>
+                    <input type="text" placeholder="website enquiry" id="mail_subject"  ng-model="mailto.subject" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="small-12 medium-6 columns">
+                    <label for="mail_body">Email Body</label>
+                    <textarea id="mail_body"  rows="8" cols="20" id="mail_body" ng-model="mailto.body" ></textarea>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="small-12 medium-6 columns">
+                    <a href="#" class="button postfix " ng-click="generateMailto(mailto.to, mailto.subject, mailto.body)"><i class="fa fa-gear"></i> Generate</a>
+            </div>
+
+        </div>
+
+    </form>
+</section>
+
+
+<section id="output">
+    <div class="row">
+        <div class="small-12 columns"><textarea rows="3" cols="20" class="ta">{{mailto.link}}</textarea></div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="small-12 columns">
+            Example: <a href="{{mailto.link}}">{{mailto.to}}</a>
+        </div>
+    </div>
+
+</section>
+
+</div>
+
+
+
+
+<footer>
+
+    <div class="row">
+        <div class="large-12 columns">
+            <p>&copy copyright 2015</p>
+        </div>
+    </div>
+
+</footer>
+
+
+<script src="components/vendor/jquery/dist/jquery.min.js"></script>
+<script src="components/vendor/foundation/js/foundation.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+
+</body>
+</html>
+
