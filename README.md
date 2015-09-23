@@ -1,6 +1,8 @@
 Mailto Link Generator
 =======================
 
+See it in action:  http://faffyman.github.io/MailtoLinkGenerator
+
 This single page app is used for creating a mailto: link that will pre populate the subject and body fields of the resulting email.
 
 How to Use it?
